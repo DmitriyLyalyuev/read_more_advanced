@@ -37,6 +37,7 @@ def insert_read_more(instance):
     :return:
     """
 
+    import re
     # only deals with Article type
     if type(instance) != contents.Article: return
 
@@ -47,7 +48,7 @@ def insert_read_more(instance):
     if not (READ_MORE_TEXT and READ_MORE_LINK_FORMAT): return
 
     rx=re.compile(r'<!--\s+more\s+-->')
-    summary = rx.sub(‘<!--more-->’, instance.content).split('<!--more-->', 1)[0]
+    summary = rx.sub('<!--more-->', instance.content).split('<!--more-->', 1)[0]
 
     if summary != instance.content:
         read_more_link = READ_MORE_LINK_FORMAT.format(url=instance.url, text=READ_MORE_TEXT.encode('utf-8'))
