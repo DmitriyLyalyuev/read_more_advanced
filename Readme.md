@@ -1,9 +1,9 @@
-Read More Advaced
+Read More Advaced for [Pelican](http://getpelican.com/)
 ===
 
 **Author**: Dmitriy Lyalyuev (https://lyalyuev.info)
 
-This plugin add an "read more" or "continue" link to the end of the object summary.
+This plugin split article with "more" tag and add an "read more" or "continue" link to end of first part of article.
 
 Settings
 ---
