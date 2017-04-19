@@ -46,7 +46,8 @@ def insert_read_more(instance):
 
     if not (READ_MORE_TEXT and READ_MORE_LINK_FORMAT): return
 
-    summary = instance.content.split('<!-- more -->', 1)[0]
+    rx=re.compile(r'<!--\s+more\s+-->')
+    summary = rx.sub(‘<!--more-->’, instance.content).split('<!--more-->', 1)[0]
 
     if summary != instance.content:
         read_more_link = READ_MORE_LINK_FORMAT.format(url=instance.url, text=READ_MORE_TEXT.encode('utf-8'))
